@@ -1,2 +1,2 @@
 # python-code-validator
-Runs black, mypy, reorder-python-imports, pylint and safety
+Runs black, mypy, pylint, reorder-python-imports and safety

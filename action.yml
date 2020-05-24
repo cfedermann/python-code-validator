@@ -1,0 +1,11 @@
+name: "python-code-validator"
+author: "Christian Federmann"
+description: "Runs black, mypy, pylint, reorder-python-imports and safety"
+branding:
+  icon: "shield"
+  color: "white"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+env:
+  PYLINT_THRESHOLD: 9
