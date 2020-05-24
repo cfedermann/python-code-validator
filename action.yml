@@ -7,5 +7,3 @@ branding:
 runs:
   using: "docker"
   image: "Dockerfile"
-env:
-  PYLINT_THRESHOLD: 9

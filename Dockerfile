@@ -9,6 +9,8 @@ LABEL "repository"="https://github.com/cfedermann/python-code-validator"
 LABEL "homepage"="https://github.com/cfedermann/python-code-validator"
 LABEL "maintainer"="cfedermann"
 
+ENV PYLINT_THRESHOLD "9"
+
 RUN pip install black mypy pylint-fail-under reorder-python-imports safety
 
 COPY entrypoint.sh /entrypoint.sh
