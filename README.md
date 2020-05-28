@@ -16,6 +16,6 @@ In your `.github/workflows/main.yml`, set environment variable `PYLINT_THRESHOLD
           - name: Python Code Validator
             uses: cfedermann/python-code-validator@master
             env:
-                PYLINT_THRESHOLD 8
+                PYLINT_THRESHOLD: 8
 
 You can drop the `env:` section in your `main.yml` file if you want to use the default value `9`.
