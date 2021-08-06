@@ -1,6 +1,19 @@
 # python-code-validator
 Runs black, mypy, pylint, reorder-python-imports and safety
 
+## Validation strategy
+
+1. Run `black -S -l $BLACK_LINE_MAXLEN` version `21.7b0`
+2. Run `mypy` version `0.900`
+3. Run `pylint` version `2.9.6`, failing if `score < $PYLINT_THRESHOLD`
+4. Run `reorder-python-imports` version `2.6.0`
+5. Run `safety` version `1.10.3`
+
+## Default settings
+
+- `BLACK_LINE_MAXLEN = 100`
+- `PYLINT_THRESHOLD = 9`
+
 ## Configuration
 In your `.github/workflows/main.yml`, set environment variable `PYLINT_THRESHOLD` to a value between `0` and `10`, e.g.:
 
@@ -27,11 +40,8 @@ In your local repo, it may be useful to add a `validation.sh` script to allow lo
 
     #!/bin/sh -e
 
-    pip install black mypy pylint-fail-under reorder-python-imports safety
+    pip install black==21.7b0 mypy==0.900 pylint==2.9.6 pylint-fail-under==0.3.0 reorder-python-imports==2.6.0 safety==1.10.3
     pip install -r requirements.txt
-
-    export PYLINT_THRESHOLD=8
-    export BLACK_LINE_MAXLEN=100
 
     black -S -l $BLACK_LINE_MAXLEN --check .
     find . -name "*.py" -not -path "./.venv/*" | xargs mypy
