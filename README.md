@@ -17,5 +17,8 @@ In your `.github/workflows/main.yml`, set environment variable `PYLINT_THRESHOLD
             uses: cfedermann/python-code-validator@master
             env:
                 PYLINT_THRESHOLD: 8
+                BLACK_LINE_MAXLEN: 100
 
 You can drop the `env:` section in your `main.yml` file if you want to use the default value `9`.
+
+Set `BLACK_LINE_MAXLEN` to the desired max line length.
