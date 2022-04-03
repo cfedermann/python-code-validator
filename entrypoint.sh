@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-pip install black==21.7b0 mypy==0.900 pylint==2.9.6 pylint-fail-under==0.3.0 reorder-python-imports==2.6.0 safety==1.10.3
+pip install black==22.3.0 mypy==0.900 pylint==2.9.6 pylint-fail-under==0.3.0 reorder-python-imports==2.6.0 safety==1.10.3
 pip install -r requirements.txt
 
 black -S -l $BLACK_LINE_MAXLEN --check .
